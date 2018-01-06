@@ -4,6 +4,8 @@
   "description": "webhook for git",
   "main": "index.js",
   "scripts": {
+    "start": "micro",
+    "dev": "micro-dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -11,5 +13,11 @@
     "git"
   ],
   "author": "ahmad.arif019@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "micro": "^9.0.2"
+  },
+  "devDependencies": {
+    "micro-dev": "^2.1.2"
+  }
 }
