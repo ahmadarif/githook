@@ -7,7 +7,7 @@ const index = (req, res) => res.end('Welcome to Micro')
 
 const webhook = async (req, res) => {
     const payload = await buffer(req)
-    const signDecrypt = sha1Github(payload, 'rahasia')
+    const signDecrypt = sha1Github(payload, 'YOUR_OWN_SECRET')
     const sig = req.headers['x-hub-signature']
     const event = req.headers['x-github-event']
 
