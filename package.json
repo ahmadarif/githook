@@ -15,7 +15,8 @@
   "author": "ahmad.arif019@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "micro": "^9.0.2"
+    "micro": "^9.0.2",
+    "microrouter": "^3.0.0"
   },
   "devDependencies": {
     "micro-dev": "^2.1.2"
