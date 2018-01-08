@@ -6,7 +6,8 @@ const secretObj = SecretKeyValidation([
     {
         url: '/',
         provider: 'github',
-        secret: 'rahasia'
+        secret: 'YOUR_GITHUB_SECRET_KEY',
+        branch: 'master'
     }
 ])
 
