@@ -7,7 +7,8 @@ const validationObj = Validation([
         url: '/',
         provider: 'github',
         secret: 'YOUR_GITHUB_SECRET_KEY',
-        branch: 'master'
+        branch: 'master', // default: master
+        event: 'push' // default: push
     }
 ])
 
