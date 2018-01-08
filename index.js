@@ -1,8 +1,8 @@
 const { router, get, post } = require('microrouter')
-const SecretKeyValidation = require('./lib/SecretKeyValidation')
+const Validation = require('./lib/Validation')
 const { getIndex, postGithub } = require('./routes')
 
-const secretObj = SecretKeyValidation([
+const validationObj = Validation([
     {
         url: '/',
         provider: 'github',
@@ -11,7 +11,7 @@ const secretObj = SecretKeyValidation([
     }
 ])
 
-module.exports = secretObj(router(
+module.exports = validationObj(router(
     get('/', getIndex),
     post('/', postGithub)
 ))
