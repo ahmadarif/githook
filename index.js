@@ -1,26 +1,23 @@
 const { router, get, post } = require('microrouter')
 const Validation = require('./lib/Validation')
-const { getIndex, postGithub, gitlab } = require('./routes')
+const routes = require('./routes')
 
 const validationObj = Validation([
     {
-        url: '/',
+        url: '/github',
         provider: 'github',
         secret: 'YOUR_GITHUB_SECRET_KEY',
         branch: 'master', // default: master
-        event: 'push' // default: push
     },
     {
       url: '/gitlab',
       provider: 'gitlab',
-      secret: 'YOUR_GITHUB_SECRET_KEY',
+      secret: 'YOUR_GITLAB_SECRET_KEY',
+      branch: 'master',
     }
 ])
 
-module.exports = router(
-    get('/', getIndex), 
-    validationObj(
-      post('/', postGithub),
-      post('/gitlab', gitlab)
-    )
-)
+module.exports = validationObj(router(
+    post('/github', routes.github),
+    post('/gitlab', routes.gitlab)
+))
