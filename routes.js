@@ -14,3 +14,8 @@ exports.postGithub = async (req, res) => {
 
     return { message: 'success' }
 }
+
+exports.gitlab = async (req, res) => {
+  shell.echo('gitlab')
+  return { message: 'gitlab success' }
+}
